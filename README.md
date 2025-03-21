@@ -19,11 +19,8 @@ In this game, you control a paddle to hit the ball, hit more to gain more points
 
 ## 🕹️ Controls
 
-Use the Mouse Clicks to navigate:
-
-- To Select Option
-- Increase Volume
-- Set Color Option
+- **Space** : Pause/Resume Game
+- **Enter** : Restart Game
 
 Use keys to control the Paddle movements:
 

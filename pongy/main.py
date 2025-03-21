@@ -145,7 +145,7 @@ class Game:
         if self.paused:
             screen.blit(
                 paused_suface,
-                ((config.WIDTH / 2) - 100, config.HEIGHT / 2 - 30, 50, 50),
+                ((config.WIDTH / 2) - 120, config.HEIGHT / 2 - 30, 50, 50),
             )
 
         if self.game_over:
