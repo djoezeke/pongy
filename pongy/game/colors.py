@@ -1,5 +1,4 @@
 """Color"""
-
 import pygame
 
 

@@ -24,8 +24,8 @@ def get_icon(filename: str):
 
 def get_font(filename: str):
     "Get Font"
-    font = os.path.join(get_resource("fonts"), filename)
-    return font
+    _font = os.path.join(get_resource("fonts"), filename)
+    return _font
 
 
 def flip_button_image(img, flip_horizontal, flip_vertical):
@@ -39,22 +39,13 @@ VERSION: str = "1.0.0"
 DEBUG: bool = True
 
 
-HEIGHT: int = 600  # Game Window height
-WIDTH: int = 830  # Game Window Width
+HEIGHT: int = 500  # Game Window height
+WIDTH: int = 800  # Game Window Width
 SCREEN: dict = (WIDTH, HEIGHT)  # Game Screen
 
 FPS: int = 60
 
 WINDOW: pygame.Surface = pygame.display.set_mode(SCREEN)
-
-# Game Constants
-
-computerscore: int = 0
-playerscore: int = 0
-
-ballspeedx: int = 5
-ballspeedy: int = 5
-paddlespeed: int = 5
 
 # clock info
 clock: pygame.Clock = None
@@ -62,7 +53,8 @@ clock: pygame.Clock = None
 # Fonts
 pygame.font.init()  # initialize pygame font
 
-font: pygame.Font = pygame.font.SysFont("comicsans", 30)
+font: pygame.Font = pygame.font.SysFont("arial", 40)
+score_font: pygame.Font = pygame.font.Font(None, 100)
 
 # Sounds
 pygame.mixer.init()  # initialize pygame mixer
@@ -90,16 +82,3 @@ STAR = pygame.image.load(get_icon("Icon_Star.png"))
 
 BTN_SOUND_OFF = pygame.image.load(get_icon("Icon_SoundOff.png"))
 BTN_SOUND_ON = pygame.image.load(get_icon("Icon_SoundOn.png"))
-
-# Rects
-circle: pygame.Rect = pygame.Rect(0, 0, 200, 200)
-circle.center = (WIDTH / 2, HEIGHT / 2)
-leftbox: pygame.Rect = pygame.Rect(0, 0, WIDTH / 2, HEIGHT)
-rightbox: pygame.Rect = pygame.Rect(WIDTH / 2, 0, WIDTH / 2, HEIGHT)
-
-c_paddle: pygame.Rect = pygame.Rect(0, 0, 10, 70)
-p_paddle: pygame.Rect = pygame.Rect(0, 0, 10, 70)
-ball: pygame.Rect = pygame.Rect(0, 0, 20, 20)
-ball.center = (WIDTH // 2, HEIGHT // 2)
-p_paddle.center = (7, HEIGHT // 2)
-c_paddle.center = (WIDTH - 7, HEIGHT // 2)
